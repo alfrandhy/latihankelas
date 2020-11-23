@@ -1,0 +1,16 @@
+header{
+    text-align: center;
+}
+.sidebar{
+    height: 500px;
+    background-color: #8b8b88;
+}
+.content{
+    height: 500px;
+    background-color: gray;
+}
+footer{
+    background-color: #3e443f;
+    padding: 5px;
+    color: white;
+}
