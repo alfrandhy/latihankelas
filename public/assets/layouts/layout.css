@@ -8,6 +8,7 @@ header{
 .content{
     height: 500px;
     background-color: gray;
+    font-family: 'Nerko One', cursive;
 }
 footer{
     background-color: #3e443f;

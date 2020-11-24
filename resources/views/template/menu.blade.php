@@ -3,11 +3,11 @@
     <a href="{{ url('/contact') }}">Contact</a>
     <a href="#">About</a>
     <div class="dropdown">
-      <button class="dropbtn">Dropdown 
+      <button class="dropbtn">Fanspage 
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
+        <a href="http://www.facebook.com" target="_blank">Link 1</a>
         <a href="#">Link 2</a>
         <a href="#">Link 3</a>
       </div>

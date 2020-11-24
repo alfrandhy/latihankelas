@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('assets/layouts/css.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/layouts/menu.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/layouts/layout.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -35,12 +37,12 @@
     {{-- Style JS --}}
         <script>
             function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
             }
         </script>
 </body>
