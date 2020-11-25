@@ -26,3 +26,8 @@ Route::get('/contact', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Category Routes
+Route::get('/category', 'CategoryController@index')->name('category');
+Route::get('/category/create', 'CategoryController@create')->name('category.create');
+Route::post('/category/create', 'CategoryController@store')->name('category.store');

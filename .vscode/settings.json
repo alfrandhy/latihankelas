@@ -1,0 +1,9 @@
+{
+    // "terminal.integrated.shell.windows": "cmd.exe",
+
+    "terminal.integerated.shellArgs.windows": [
+        "D:\\laragon\\bin\\cmder\\vendor\\init.bat"
+    ],
+
+    // "terminal.integerated.shell.windows": "D:\\laragon\\bin\\cmder\\Cmder.exe",
+}
