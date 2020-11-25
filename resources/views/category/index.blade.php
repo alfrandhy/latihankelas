@@ -20,6 +20,7 @@
                         <tr>
                             <th>No</th>
                             <th>Category</th>
+                            <th>Parrent</th>
                             <th>Created At</th>
                             <th>Action</th>
                         </tr>
