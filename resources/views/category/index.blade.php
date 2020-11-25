@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a class="btn btn-success" href="">Create Category</a>
+                    <a class="btn btn-success" href="{{ url('category/create') }}">Create Category</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-stripped">
@@ -23,12 +23,16 @@
                             <th>Created At</th>
                             <th>Action</th>
                         </tr>
+                        @php $no=1 @endphp
+                        @foreach ($category as $item) 
                         <tr>
-                            <td>{{ __('Category') }}</td>
-                            <td>{{ __('Category') }}</td>
-                            <td>{{ __('Category') }}</td>
-                            <td>{{ __('Category') }}</td>
-                        </tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{  $item->parent  ?  $item->parent->name:'-' }}</td>
+                                <td>{{ $item->created_at }}</td>
+                                <td></td>
+                            </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>
