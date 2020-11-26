@@ -53,8 +53,6 @@ class CategoryController extends Controller
         // }
         // return redirect(route('category.index'))->with(['error' => 'Hapus Sub Category Terlebih Dahulu']);
         $category = Category::find($id)->delete();
-        return redirect(Route('category'));
+        return redirect(Route('category'))->with('success', 'Category Berhasil Dihapus');
     }
-
-
 }
