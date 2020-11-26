@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -27,7 +27,7 @@ class CategoryController extends Controller
         ]);
         $request->request->add(['slug' => $request->name]);
         Category::create($request->except('_token'));
-        return redirect(route('category'))->with(['success' => 'Category Ditambah']);
+        return redirect(route('category.index'))->with(['success' => 'Category Ditambah']);
     }
     public function edit($id)
     {
@@ -46,19 +46,19 @@ class CategoryController extends Controller
             'parent_id'=>$request->parent_id,
             'slug' => $request->name
         ]);
-        return redirect(route('category'))->with(['success' => 'Category Diperbaharui']);
+        return redirect(route('category.index'))->with(['success' => 'Category Diperbaharui']);
     }
     public function destroy($id)
     {
-        // $category=Category::withCount(['child','product'])->find($id);
-        // if ($category->child_count == 0 && $category->product_count == 0) {
-        //     $category->delete();
-        //     return redirect(route('category.index'))->with(['success' => 'Category Dihapus']);
-        // }
-        // return redirect(route('category.index'))->with(['error' => 'Hapus Sub Category Terlebih Dahulu']);
-        $category = Category::find($id)->delete();
-        return redirect(Route('category'))
-            ->with('success', 'Category Berhasil Dihapus')
-            ;
+        $category=Category::withCount(['child','product'])->find($id);
+        if ($category->child_count == 0 && $category->product_count == 0) {
+            $category->delete();
+            return redirect(route('category.index'))->with(['success' => 'Category Dihapus']);
+        }
+        return redirect(route('category.index'))->with(['error' => 'Hapus Sub Category Terlebih Dahulu']);
+        // $category = Category::find($id)->delete();
+        // return redirect(Route('category.index'))
+        //     ->with('success', 'Category Berhasil Dihapus')
+        // ;
     }
 }

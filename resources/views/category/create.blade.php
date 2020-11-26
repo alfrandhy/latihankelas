@@ -31,6 +31,7 @@
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">SAVE</button>
+                            <a class="btn btn-secondary btn-block" href="{{ route('category.index') }}">Back</a>
                         </div>
                     </form>
                 </div>

@@ -28,10 +28,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Category Routes
-Route::get('category', 'CategoryController@index')->name('category');
-Route::get('category/create', 'CategoryController@create')->name('category.create');
-Route::POST('category/create', 'CategoryController@store')->name('category.store');
-Route::get('category/edit/{category}', 'CategoryController@edit')->name('category.edit');
-Route::PUT('category/category/{category}', 'CategoryController@Update')->name('category.update');
-Route::get('category/delete/{category}', 'CategoryController@destroy')->name('category.delete');
-// Route::resource('category', 'CategoryController');
+// Route::get('category', 'CategoryController@index')->name('category');
+// Route::get('category/create', 'CategoryController@create')->name('category.create');
+// Route::POST('category/create', 'CategoryController@store')->name('category.store');
+// Route::get('category/edit/{category}', 'CategoryController@edit')->name('category.edit');
+// Route::PUT('category/category/{category}', 'CategoryController@Update')->name('category.update');
+// Route::get('category/{category}', 'CategoryController@destroy')->name('category.delete');
+Route::resource('category', 'CategoryController')->except('show');
+
+// Post Routes
+Route::resource('blog', 'BlogController');
