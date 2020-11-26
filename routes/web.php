@@ -33,5 +33,5 @@ Route::get('category/create', 'CategoryController@create')->name('category.creat
 Route::POST('category/create', 'CategoryController@store')->name('category.store');
 Route::get('category/edit/{category}', 'CategoryController@edit')->name('category.edit');
 Route::PUT('category/category/{category}', 'CategoryController@Update')->name('category.update');
-Route::delete('category/delete/{category}', 'CategoryController@destroy')->name('category.delete');
+Route::get('category/delete/{category}', 'CategoryController@destroy')->name('category.delete');
 // Route::resource('category', 'CategoryController');
