@@ -31,7 +31,16 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->parent  ?  $item->parent->name:'-' }}</td>
                                 <td>{{ $item->created_at }}</td>
-                                <td></td>
+                                <td>
+                                    {{-- <form action="{{ route('category.delete',$item->id) }}"  method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form> --}}
+                                    <a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger">Delete Category</a>
+                                    <a href="{{ route('category.edit',$item->id) }}" class="btn btn-warning">Edit</a>
+                                </td>
+
                             </tr>
                         @endforeach
                     </table>

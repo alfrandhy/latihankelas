@@ -7,6 +7,10 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $category = Category::with(['parent'])->orderBy('created_at','DESC')->paginate(10);
         $parent = Category::getParent()->orderBy('name','ASC')->get();
@@ -29,7 +33,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $parent = Category::getParent()->orderBy('name','ASC')->get();
-        return view('admin.categories.edit', compact('category','parent'));
+        return view('category.edit', compact('category','parent'));
     }
     public function Update(Request $request, $id)
     {
@@ -42,7 +46,7 @@ class CategoryController extends Controller
             'parent_id'=>$request->parent_id,
             'slug' => $request->name
         ]);
-        return redirect(route('category.index'))->with(['success' => 'Category Diperbaharui']);
+        return redirect(route('category'))->with(['success' => 'Category Diperbaharui']);
     }
     public function destroy($id)
     {
