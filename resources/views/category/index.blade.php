@@ -29,7 +29,7 @@
                         <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{  $item->parent  ?  $item->parent->name:'-' }}</td>
+                                <td>{{ $item->parent  ?  $item->parent->name:'-' }}</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td></td>
                             </tr>
