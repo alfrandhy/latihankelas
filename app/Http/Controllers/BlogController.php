@@ -85,7 +85,7 @@ class BlogController extends Controller
         $blog->update([
             'title'=>$request->title,
             'description'=>$request->description,
-            'slug' => $request->name
+            'slug' => $request->title
         ]);
         return redirect(route('blog.index'))->with(['success' => 'Category Ditambah']);
     }
